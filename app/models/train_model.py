@@ -10,7 +10,7 @@ from numpy.random import RandomState
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 
-from app import settings
+from ..utils import settings
 
 from ..helpers import files as files_helper
 from ..utils import files as files_utils
