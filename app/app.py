@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify, make_response
 from schema import SchemaError
 import datetime
 
-from . import config
+from . import settings
 from app.helpers import features, validation
 from app.utils import files
 
