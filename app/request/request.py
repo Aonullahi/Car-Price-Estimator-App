@@ -2,8 +2,7 @@ import requests
 import json
 
 
-url = 'http://127.0.0.1:8080/v0/predict'
-
+url = 'http://127.0.0.1:8080/v0/predict'  
 # sample data
 data = {'id':'NG-01',                  #unique car id, (must be string)
        'manufacturer':'Toyota',        # e.g toyota, honda, nissan, etc.. (must be string)

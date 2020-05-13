@@ -1,1 +1,6 @@
 2020-05-13 14:41:48,411 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-13 21:21:01,490 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 404 NOT FOUND
+2020-05-13 21:22:15,164 - __main__ - INFO - 127.0.0.1 POST http /v1/predict? 200 OK
+2020-05-13 22:04:25,494 - __main__ - INFO - 127.0.0.1 POST http /v1/predict? 200 OK
+2020-05-13 22:06:03,066 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 404 NOT FOUND
+2020-05-13 22:06:32,911 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK

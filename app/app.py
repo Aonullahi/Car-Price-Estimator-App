@@ -8,9 +8,9 @@ from flask import Flask, request, jsonify, make_response
 from schema import SchemaError
 import datetime
 
-from . import settings
-from app.helpers import features, validation
-from app.utils import files
+from settings import *
+from helpers import features, validation
+from utils import files
 
 app = Flask(__name__)
 model = None
@@ -91,14 +91,14 @@ def exceptions(e):
 
 if __name__ == '__main__':
     try:
-        port = int(settings.PORT)
+        port = int(PORT)
     except Exception as e:
-        print("Failed to bind to port {}".format(settings.PORT))
+        print("Failed to bind to port {}".format(PORT))
         port = 80
 
     pattern = '^.+\-(v\d+)\.p$'
 
-    models_available = files.get_files_matching(settings.MODELS_ROOT, '^.+\-v\d+\.p$')
+    models_available = files.get_files_matching(MODELS_ROOT, '^.+\-v\d+\.p$')
 
     models = dict()
 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         models[version_id] = pickle.load(open(path_to_model, "rb"))
 
     # 10M = 1024*1000*10 bytes
-    handler = ConcurrentRotatingFileHandler(settings.LOG_FILE, maxBytes=1024 * 1000 * 10, backupCount=5, use_gzip=True)
+    handler = ConcurrentRotatingFileHandler(LOG_FILE, maxBytes=1024 * 1000 * 10, backupCount=5, use_gzip=True)
 
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 else:
     pattern = '^.+\-(v\d+)\.p$'
 
-    models_available = files.get_files_matching(settings.MODELS_ROOT, '^.+\-v\d+\.p$')
+    models_available = files.get_files_matching(MODELS_ROOT, '^.+\-v\d+\.p$')
 
     models = dict()
 
