@@ -1,7 +1,7 @@
 import unittest
 from flask_testing import TestCase
 from flask import json
-from app.utils import settings
+from app import settings
 from app.helpers import files as files_helper
 from app.models.train_model import train
 import os
