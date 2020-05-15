@@ -59,55 +59,54 @@ class WebTests(TestCase):
 
     def test_prediction(self):
 
-        payload = {
-            "id": "2",
-            "x_1": 1.2,
-            "x_2": -0.414120,
-            "x_3": 0.2131,
-            "x_4": -1.2
+        collection = {
+            "id": "NG-01",
+            "manufacturer": 'toyota',
+            "year": 2019,
+            "mileage": 10000,
+            "sec_status": 'new'
         }
 
         route = "/v{}/predict".format(version_number)
 
-        response = self.client.post(route, data=json.dumps(payload),
+        response = self.client.post(route, data=json.dumps(collection),
                                     headers={'Content-Type': 'application/json'})
 
         self.assertEqual(response.status_code, 200)
 
-        expected_response = json.dumps({"id": "2", "prediction": 0.6108}).replace(" ","")
+        expected_response = json.dumps({"id": "NG-01", "prediction": 2000000}).replace(" ","")
 
         actual_response = str(response.data,'utf-8').strip()
 
         self.assertEqual(actual_response, expected_response)
 
     def test_400(self):
-        # missing x_3
-        payload = {
-            "id": "fdasf",
-            "x_1": -0.414120,
-            "x_2": 0.2131,
-            "x_4": -123.2
+        # missing manufacturer
+        collection = {
+           "id": "NG-01",
+            "year": 2019,
+            "mileage": 10000,
+            "sec_status": 'new'
         }
 
         route = "/v{}/predict".format(version_number)
 
-        response = self.client.post(route, data=json.dumps(payload),
+        response = self.client.post(route, data=json.dumps(collection),
                                     headers={'Content-Type': 'application/json'})
 
         self.assertEqual(response.status_code, 400)
 
     def test_404(self):
-        payload = {
-            "id": "foo-bar",
-            "x_1": 0.32,
-            "x_2": 0.5,
-            "x_3": 200,
-            "x_4": 200.87
+        collection = {
+            "id": "NG-01",
+            "year": 2019,
+            "mileage": 10000,
+            "sec_status": 'new'
         }
 
         route = "/v{}/predict".format(version_number + 1)
 
-        response = self.client.post(route, data=json.dumps(payload),
+        response = self.client.post(route, data=json.dumps(collection),
                                     headers={'Content-Type': 'application/json'})
 
         self.assertEqual(response.status_code, 404)

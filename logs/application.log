@@ -1,6 +1,937 @@
-2020-05-13 14:41:48,411 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
-2020-05-13 21:21:01,490 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 404 NOT FOUND
-2020-05-13 21:22:15,164 - __main__ - INFO - 127.0.0.1 POST http /v1/predict? 200 OK
-2020-05-13 22:04:25,494 - __main__ - INFO - 127.0.0.1 POST http /v1/predict? 200 OK
-2020-05-13 22:06:03,066 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 404 NOT FOUND
-2020-05-13 22:06:32,911 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-14 08:20:28,724 - __main__ - INFO - 127.0.0.1 GET http /favicon.ico? 404 NOT FOUND
+2020-05-14 08:22:17,986 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 08:22:37,985 - __main__ - INFO - 127.0.0.1 GET http /v0? 404 NOT FOUND
+2020-05-14 08:22:47,988 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 08:22:57,990 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-14 08:23:06,024 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 08:23:11,715 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 08:25:06,558 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:25:06,568 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:25:22,560 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:29:22,397 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:29:26,375 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:29:42,399 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 08:29:42,990 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 08:29:50,504 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:30:56,270 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 08:30:56,373 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 08:31:03,092 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 08:32:32,511 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 08:36:52,665 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    if models.get(version, None) is not None:
+NameError: name 'version' is not defined
+
+2020-05-14 08:37:02,664 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    if models.get(version, None) is not None:
+NameError: name 'version' is not defined
+
+2020-05-14 08:37:33,793 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    if models.get(version, None) is not None:
+NameError: name 'version' is not defined
+
+2020-05-14 08:39:55,660 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 08:40:07,709 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 08:40:13,803 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 08:41:52,950 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: testi() got an unexpected keyword argument 'version'
+
+2020-05-14 08:41:56,927 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: testi() got an unexpected keyword argument 'version'
+
+2020-05-14 08:43:17,757 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: testi() got an unexpected keyword argument 'version'
+
+2020-05-14 08:43:21,715 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: testi() got an unexpected keyword argument 'version'
+
+2020-05-14 08:43:35,004 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 08:43:44,215 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 08:43:57,764 - __main__ - INFO - 127.0.0.1 GET http /v5/healthcheck? 200 OK
+2020-05-14 08:48:27,877 - __main__ - INFO - 127.0.0.1 GET http /v0/predictgui? 404 NOT FOUND
+2020-05-14 08:48:47,891 - __main__ - INFO - 127.0.0.1 GET http /v0/gui? 405 METHOD NOT ALLOWED
+2020-05-14 08:49:50,163 - __main__ - INFO - 127.0.0.1 GET http /v0/gui? 405 METHOD NOT ALLOWED
+2020-05-14 08:50:04,585 - __main__ - INFO - 127.0.0.1 GET http /v0/gui? 405 METHOD NOT ALLOWED
+2020-05-14 08:50:04,603 - __main__ - INFO - 127.0.0.1 GET http /v0/gui? 405 METHOD NOT ALLOWED
+2020-05-14 08:50:51,298 - __main__ - ERROR - 127.0.0.1 GET http /v0/gui? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: predictgui() got an unexpected keyword argument 'version'
+
+2020-05-14 08:54:34,221 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    if models.get(version, None) is not None:
+NameError: name 'version' is not defined
+
+2020-05-14 08:54:45,045 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    if models.get(version, None) is not None:
+NameError: name 'version' is not defined
+
+2020-05-14 08:57:48,207 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:04:08,315 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 09:04:16,977 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 09:04:24,584 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() got an unexpected keyword argument 'version'
+
+2020-05-14 09:07:17,338 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: view() got an unexpected keyword argument 'version'
+
+2020-05-14 09:07:23,099 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: view() got an unexpected keyword argument 'version'
+
+2020-05-14 09:07:25,109 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: view() got an unexpected keyword argument 'version'
+
+2020-05-14 09:07:26,951 - __main__ - ERROR - 127.0.0.1 GET http /v0/? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: view() got an unexpected keyword argument 'version'
+
+2020-05-14 09:09:14,130 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 09:09:23,385 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: home() missing 1 required positional argument: 'version'
+
+2020-05-14 09:11:15,681 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+  ata\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:11:37,313 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 09:11:44,855 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 09:11:59,874 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:14:35,093 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-14 09:14:49,977 - __main__ - ERROR - Exception on /v0/ [GET]
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2020-05-14 09:14:59,980 - __main__ - ERROR - Exception on /v0/ [GET]
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1615, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1630, in finalize_request
+    response = self.make_response(rv)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1725, in make_response
+    raise ValueError('View function did not return a response')
+ValueError: View function did not return a response
+2020-05-14 09:16:45,148 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 09:18:44,134 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-14 09:21:49,754 - __main__ - ERROR - 127.0.0.1 GET http /v0/home? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 27, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:23:56,678 - __main__ - ERROR - 127.0.0.1 GET http /v0/home? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 27, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:24:14,292 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-14 09:24:34,414 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 09:26:30,059 - __main__ - ERROR - 127.0.0.1 GET http /v0/check? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 27, in check
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-14 09:39:13,985 - __main__ - INFO - 127.0.0.1 GET http /v0/healthcheck? 200 OK
+2020-05-14 09:39:34,019 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-14 09:40:01,620 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 11:36:57,861 - __main__ - INFO - 127.0.0.1 GET http /? 404 NOT FOUND
+2020-05-15 11:37:19,888 - __main__ - ERROR - 127.0.0.1 GET http /v0? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 11:40:47,451 - __main__ - ERROR - 127.0.0.1 GET http /v0? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 11:44:12,558 - __main__ - ERROR - 127.0.0.1 GET http /v0? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html' , version=version)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 11:44:18,396 - __main__ - ERROR - 127.0.0.1 GET http /v0? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html' , version=version)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 11:47:27,609 - __main__ - ERROR - 127.0.0.1 GET http /v0? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html' , version=version)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('<version>/predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint '<version>/predict'. Did you mean 'predict' instead?
+
+2020-05-15 11:54:47,742 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 11:55:17,736 - __main__ - INFO - 127.0.0.1 GET http /v0? 404 NOT FOUND
+2020-05-15 11:55:27,322 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 11:56:56,661 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 11:56:57,237 - __main__ - INFO - 127.0.0.1 GET http /static/css/style.css? 200 OK
+2020-05-15 11:58:17,800 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 11:58:47,776 - __main__ - INFO - 127.0.0.1 GET http /v0/predict1? 405 METHOD NOT ALLOWED
+2020-05-15 12:02:55,697 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:03:09,020 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:03:39,120 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 12:03:59,029 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:10:09,182 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:10:19,152 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:10:23,576 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 12:10:39,157 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:47:11,446 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:47:15,806 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:47:23,594 - __main__ - INFO - 127.0.0.1 GET http /v0/? 404 NOT FOUND
+2020-05-15 12:47:29,867 - __main__ - ERROR - 127.0.0.1 GET http /? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 26, in home
+    return render_template('index.html')
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\AONU\AppData\Roaming\Python\Python36\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\templates\index.html", line 20, in top-level template code
+    <form action="{{ url_for('predict')}}"method="post">
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'predict'. Did you forget to specify values ['version']?
+
+2020-05-15 12:48:35,793 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 12:48:57,532 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 405 METHOD NOT ALLOWED
+2020-05-15 12:50:03,766 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 12:50:23,747 - __main__ - INFO - 127.0.0.1 GET http /v1/predict? 200 OK
+2020-05-15 13:17:43,672 - __main__ - ERROR - 127.0.0.1 GET http /v1/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 43, in predict
+    validation.validate("predict", payload)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\helpers\validation.py", line 11, in validate
+    schema.validate(json_data)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\schema.py", line 301, in validate
+    SchemaMissingKeyError('Missing keys: ' + s_missing_keys, e)
+schema.SchemaMissingKeyError: Missing keys: 'id', 'manufacturer', 'mileage', 'sec_status', 'year'
+
+2020-05-15 13:31:15,193 - __main__ - INFO - 127.0.0.1 GET http /v1/predict? 400 BAD REQUEST
+2020-05-15 13:31:31,168 - __main__ - INFO - 127.0.0.1 GET http /v1/predict? 400 BAD REQUEST
+2020-05-15 13:31:33,401 - __main__ - INFO - 127.0.0.1 GET http /v1/predict? 400 BAD REQUEST
+2020-05-15 13:31:43,783 - __main__ - INFO - 127.0.0.1 GET http /v1/predict? 400 BAD REQUEST
+2020-05-15 13:31:53,858 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 13:32:33,790 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:35:43,846 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 43, in predict
+    payload['year'] = int(payload['year'])
+TypeError: 'Response' object is not subscriptable
+
+2020-05-15 13:44:02,742 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:44:16,719 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:44:28,030 - __main__ - INFO - 127.0.0.1 GET http /? 200 OK
+2020-05-15 13:44:44,044 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:48:54,143 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:49:04,110 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 400 BAD REQUEST
+2020-05-15 13:50:14,134 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 44, in predict
+    validation.validate("predict", collection)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\helpers\validation.py", line 11, in validate
+    schema.validate(json_data)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\schema.py", line 256, in validate
+    data = Schema(dict, error=e).validate(data)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\schema.py", line 324, in validate
+    e.format(data) if e else None)
+schema.SchemaUnexpectedTypeError: <Response 3 bytes [200 OK]> should be instance of 'dict'
+
+2020-05-15 13:57:14,160 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 42, in predict
+    collection['year'] = int(collection['year'])
+KeyError: 'year'
+
+2020-05-15 13:57:17,116 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 42, in predict
+    collection['year'] = int(collection['year'])
+KeyError: 'year'
+
+2020-05-15 13:58:54,261 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 42, in predict
+    collection['year'] = int(collection['year'])
+KeyError: 'year'
+
+2020-05-15 13:59:14,263 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 42, in predict
+    collection['year'] = int(collection['year'])
+KeyError: 'year'
+
+2020-05-15 14:00:24,279 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 42, in predict
+    collection['year'] = int(collection['year'])
+TypeError: 'Response' object is not subscriptable
+
+2020-05-15 14:04:16,800 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 41, in predict
+    collection = request.form.json()
+AttributeError: 'ImmutableMultiDict' object has no attribute 'json'
+
+2020-05-15 14:12:14,478 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 43, in predict
+    collection['year'] = int(collect['year'][0])
+KeyError: 'year'
+
+2020-05-15 14:15:24,532 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 43, in predict
+    collection['year'] = int(collect['year'][0])
+KeyError: 'year'
+
+2020-05-15 14:16:24,553 - __main__ - ERROR - 127.0.0.1 GET http /v0/predict? 5XX INTERNAL SERVER ERROR
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\ProgramData\Anaconda3\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\app.py", line 47, in predict
+    validation.validate("predict", collection)
+  File "C:\Users\AONU\Documents\personal_projects\car_price_app\app\helpers\validation.py", line 11, in validate
+    schema.validate(json_data)
+  File "C:\ProgramData\Anaconda3\lib\site-packages\schema.py", line 301, in validate
+    SchemaMissingKeyError('Missinedict? 405 METHOD NOT ALLOWED
+
+
+2020-05-15 20:12:18,333 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:15:33,569 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 400 BAD REQUEST
+2020-05-15 20:19:03,540 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:19:23,634 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:20:23,502 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:20:33,498 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:27:23,414 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:27:43,645 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:29:24,128 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:29:34,607 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:30:31,483 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:30:53,697 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:32:12,680 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:32:23,720 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:34:23,796 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:34:31,085 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:35:30,366 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:36:03,822 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:38:13,852 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:38:33,853 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:39:14,721 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:39:33,934 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:42:03,991 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:42:44,066 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:46:04,039 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:46:24,026 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:48:04,205 - __main__ - INFO - 127.0.0.1 POST http /predict? 404 NOT FOUND
+2020-05-15 20:48:07,634 - __main__ - INFO - 127.0.0.1 GET http /predict? 404 NOT FOUND
+2020-05-15 20:48:13,304 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:48:24,062 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK
+2020-05-15 20:50:24,110 - __main__ - INFO - 127.0.0.1 GET http /v0/predict? 200 OK
+2020-05-15 20:50:44,095 - __main__ - INFO - 127.0.0.1 POST http /v0/predict? 200 OK

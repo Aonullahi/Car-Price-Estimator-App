@@ -4,9 +4,10 @@ import re
 import traceback
 
 from concurrent_log_handler import ConcurrentRotatingFileHandler
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, render_template, url_for
+import pickle
 from schema import SchemaError
-import datetime
+from datetime import datetime
 
 from settings import *
 from helpers import features, validation
@@ -14,11 +15,12 @@ from utils import files
 
 app = Flask(__name__)
 model = None
-
+time = datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
 
 #####################################################################################
 ################################### ROUTES ##########################################
 #####################################################################################
+
 
 @app.route('/<version>/healthcheck', methods=['GET'])
 def healthcheck(version):
@@ -28,17 +30,56 @@ def healthcheck(version):
         return ("Not OK", 200)
 
 
-@app.route('/<version>/predict', methods=['POST'])
+@app.route('/<version>/predict',methods=['POST', 'GET'])
 def predict(version):
+
+    collection = {"id": None }
+    rounded_prediction = None
+    if request.method == 'GET':
+        return render_template('index.html',version=version)
+        #collection = request.form.to_dict()
+    elif request.method == 'POST':
+        if models.get(version, None) is not None:
+            if request.form is not None:
+                #collect = request.form.to_dict(flat=True)
+                collection = {}
+                collection['year'] = int(request.form.get('year'))
+                collection['mileage'] = int(request.form.get('mileage'))
+                collection['id'] = request.form.get('id')
+                collection['manufacturer'] = request.form.get('manufacturer')
+                collection['sec_status'] = request.form.get('sec_status')
+                #collection = jsonify(collection)
+
+                validation.validate("predict", collection)
+
+                feature_vector = features.make_feature_vector(collection)
+
+                prediction = models[version].predict(feature_vector)
+
+                rounded_prediction = int(prediction)
+
+                rounded_prediction = '₦' + f"{rounded_prediction:,}"
+
+                #output = make_response((jsonify({'id': collection["id"], 'prediction': rounded_prediction,
+                 #                           'model_version' : version , 'date' : time }))) 
+                return render_template('index.html', prediction_text= "Car ID: {} , Car Price: {} , ML Model Version: {} , Timestamp: {}"
+                                                                            .format(collection['id'],rounded_prediction,version,time) )
+
+
+                #{'Car ID': collection['id'], 'Car Price': rounded_prediction,
+                    #'Model Version' : version ,'Timestamp' : time }
+
+@app.route('/<version>/predict_api', methods=['POST'])
+def predict_api(version):
     if models.get(version, None) is not None:
 
         try:
 
-            payload = request.get_json(force=True)
+            collection = request.get_json(force=True)
 
-            validation.validate("predict", payload)
+            validation.validate("predict", collection)
 
-            feature_vector = features.make_feature_vector(payload)
+            feature_vector = features.make_feature_vector(collection)
 
             prediction = models[version].predict(feature_vector)
 
@@ -46,8 +87,8 @@ def predict(version):
 
             rounded_prediction = '₦' + f"{rounded_prediction:,}"
 
-            return make_response((jsonify({'id': payload["id"], 'prediction': rounded_prediction,
-                                            'model_version' : version , 'date' : datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") })))
+            return make_response((jsonify({'id': collection["id"], 'prediction': rounded_prediction,
+                                            'model_version' : version , 'date' : time }))) 
 
         except SchemaError as ex:
             return make_response(jsonify({"message": ex.errors}), 400)
@@ -118,7 +159,7 @@ if __name__ == '__main__':
     # https://stackoverflow.com/a/20423005/436721
     app.logger.setLevel(logging.INFO)
 
-    app.run( port=port)
+    app.run(port=port , debug = True)
 
 else:
     pattern = '^.+\-(v\d+)\.p$'
