@@ -62,8 +62,23 @@ def predict(version):
 
                 #output = make_response((jsonify({'id': collection["id"], 'prediction': rounded_prediction,
                  #                           'model_version' : version , 'date' : time }))) 
-                return render_template('index.html', prediction_text= "Car ID: {} , Car Price: {} , ML Model Version: {} , Timestamp: {}"
-                                                                            .format(collection['id'],rounded_prediction,version,time) )
+                
+                return render_template('result.html', prediction_text= "{}" 
+                                                                            .format(collection['id']), 
+                                                                            prediction_text2= "{}"
+                                                                            .format(rounded_prediction),
+                                                                            prediction_text3= "{}"
+                                                                            .format(version), 
+                                                                            prediction_text4= "{}"
+                                                                            .format(time),
+                                                                            prediction_text5= "{}"
+                                                                            .format(collection['sec_status']),
+                                                                            prediction_text6= "{}"
+                                                                            .format(collection['mileage']),
+                                                                            prediction_text7= "{}"
+                                                                            .format(collection['manufacturer']),
+                                                                            prediction_text8= "{}"
+                                                                            .format(collection['year']))
 
 
                 #{'Car ID': collection['id'], 'Car Price': rounded_prediction,

@@ -15,20 +15,20 @@ def make_feature_vector(attribute_dict):
     attribute_dict["status_rank"] = get_value(attribute_dict['sec_status'].lower(), status_dict)
     attribute_dict["rank"] = get_value(attribute_dict['manuyear'], model_dict)
 
-    if ((attribute_dict["year"] > 1980)&(attribute_dict["year"] <= int(datetime.datetime.now().strftime("%Y")))):
+    #if ((attribute_dict["year"] > 1980)&(attribute_dict["year"] <= int(datetime.datetime.now().strftime("%Y")))):
 
-         feature_vector = np.array([
-         attribute_dict["year"],
-         attribute_dict["mileage"],
-         attribute_dict["status_rank"],
-         attribute_dict["rank"]
-         ])
+    feature_vector = np.array([
+    attribute_dict["year"],
+    attribute_dict["mileage"],
+    attribute_dict["status_rank"],
+    attribute_dict["rank"]
+    ])
 
-        # return a row vector
-         return feature_vector.reshape(1, -1)
+# return a row vector
+    return feature_vector.reshape(1, -1)
 
-    else:
-         raise NotImplementedError("'{}' must be greater than 1980 and less than '{}'' ".format(attribute_dict["year"], int(datetime.datetime.now().strftime("%Y"))))
+   # else:
+       #  raise NotImplementedError("'{}' must be greater than 1980 and less than '{}'' ".format(attribute_dict["year"], int(datetime.datetime.now().strftime("%Y"))))
 
 
 
