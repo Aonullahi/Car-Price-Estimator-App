@@ -24,4 +24,4 @@ pytz==2018.4
 scipy==1.1.0
 six==1.11.0
 #sklearn==0.0
-Werkzeug==0.15.3
+Werkzeug==2.2.3
